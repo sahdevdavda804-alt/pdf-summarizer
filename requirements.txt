@@ -1,0 +1,10 @@
+flask
+PyMuPDF
+nltk
+numpy
+scikit-learn
+sentence-transformers
+transformers
+torch
+reportlab
+accelerate

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PDF Summarizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="hero">
+
+        <h1>PDF Summarizer</h1>
+
+        <p>
+            Upload a PDF and get a structured hierarchical summary
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="upload-box">
+
+            <h2>Upload PDF</h2>
+
+            <p>
+                AI-powered semantic summarization
+                with clustering and smart ranking
+            </p>
+
+            <form method="POST"
+                  enctype="multipart/form-data"
+                  onsubmit="showLoader()">
+
+                <input type="file"
+                       name="pdf"
+                       required>
+
+                <br>
+
+                <button type="submit">
+                    Generate Summary
+                </button>
+
+            </form>
+
+            <div id="loader"
+                 class="loader"
+                 style="display:none;">
+
+                 Running AI pipeline...
+            </div>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                <h3>3-Stage Pipeline</h3>
+                <p>
+                    Chunk summaries,
+                    topic consolidation,
+                    structured refinement
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Semantic Ranking</h3>
+                <p>
+                    Important content preserved
+                    using embeddings
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Fact Preservation</h3>
+                <p>
+                    Numbers, years and statistics
+                    always retained
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Structured Output</h3>
+                <p>
+                    Automatic headings and
+                    bullet-point summaries
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    {% if summary %}
+
+    <div class="output">
+
+        {% for section, points in summary.items() %}
+
+            <h2>{{ section }}</h2>
+
+            <ul>
+                {% for p in points %}
+                    <li>{{ p }}</li>
+                {% endfor %}
+            </ul>
+
+        {% endfor %}
+
+        <form action="/download" method="POST">
+
+            <input type="hidden"
+                   name="summary"
+                   value="{{ summary }}">
+
+            <button type="submit">
+                Download PDF
+            </button>
+
+        </form>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+<script>
+
+function showLoader(){
+    document.getElementById("loader").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
