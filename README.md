@@ -132,7 +132,7 @@ pdf_summarizer/
 │   └── index.html
 │
 ├── static/
-│   ├── style.css
+│   └── style.css
 │
 └── uploads/
 ```
