@@ -1,77 +1,35 @@
 # PDF Summarizer AI
 
-An advanced AI-powered PDF summarization web application built using Python, Flask, NLP, Semantic Embeddings, and Transformer Models.
+AI-powered PDF summarizer built using Python, Flask, NLP, Semantic Embeddings, and Transformer Models.
 
-This project extracts text from PDF files and generates a structured hierarchical summary with:
+## Features
 
-* Smart semantic ranking
-* Topic clustering
+* Upload PDF files
+* Maximum 5 pages
+* Text-based PDFs only
+* Intelligent 50–60% summarization
+* Semantic sentence ranking
 * MMR diversity selection
-* AI-generated headings
-* Fact preservation
-* 50–60% intelligent retention
+* Topic clustering
+* Structured bullet-point output
+* Modern dark UI
+* PDF export support
 
 ---
 
-# Features
-
-## AI Pipeline
-
-### Stage 1 — Semantic Extraction
-
-* Extracts text from PDF
-* Splits into sentences
-* Cleans noisy/repetitive content
-
-### Stage 2 — Intelligent Ranking
-
-Uses hybrid scoring:
-
-* Semantic centrality
-* Title-aware relevance
-* Positional importance
-* Fact boosting
-* Informative sentence weighting
-
-### Stage 3 — MMR Diversity Selection
-
-Uses Maximal Marginal Relevance (MMR):
-
-* Reduces repetition
-* Preserves topic diversity
-* Keeps important information
-
-### Stage 4 — Topic Clustering
-
-Groups related content using:
-
-* Sentence embeddings
-* KMeans clustering
-
-### Stage 5 — Structured Output
-
-Generates:
-
-* Smart topic headings
-* Structured bullet points
-* Logical grouping
-
----
-
-# Key Technologies
+# Technologies Used
 
 ## Backend
 
 * Python
 * Flask
 
-## NLP & AI
+## AI & NLP
 
 * Sentence Transformers
 * FLAN-T5
-* Semantic Embeddings
-* MMR Algorithm
 * KMeans Clustering
+* Semantic Embeddings
 
 ## Frontend
 
@@ -81,138 +39,56 @@ Generates:
 
 ---
 
-# AI Models Used
+# AI Pipeline
 
-## Embedding Model
-
-```python
-all-MiniLM-L6-v2
-```
-
-Used for:
-
-* Semantic similarity
-* Ranking
-* Clustering
-* Redundancy detection
-
----
-
-## Transformer Model
-
-```python
-google/flan-t5-base
-```
-
-Used for:
-
-* Heading generation
-* Structured formatting
-
----
-
-# Advanced Features
-
-* Semantic extractive summarization
-* Hybrid ranking system
-* Title-aware scoring
-* Positional importance scoring
-* Fact preservation
-* Diversity-aware selection
-* Topic clustering
-* Smart heading generation
-* Modern dark UI
-* PDF export support
-
----
-
-# Input Constraints
-
-* Maximum 5 pages
-* Text-based PDFs only
-* English language support
-
----
-
-# Retention Logic
-
-Unlike traditional summarizers that heavily compress information, this project preserves approximately:
-
-```text
-50–60% of important content
-```
-
-This improves:
-
-* Detail preservation
-* Factual accuracy
-* Topic coverage
-* Readability
-
----
-
-# Project Structure
-
-```text
-pdf_summarizer/
-│
-├── app.py
-├── summarizer.py
-├── requirements.txt
-│
-├── templates/
-│   └── index.html
-│
-├── static/
-│   ├── style.css
-│   └── script.js
-│
-└── uploads/
-```
+1. Extract PDF text
+2. Clean and split sentences
+3. Rank important sentences
+4. Remove repetition using MMR
+5. Cluster topics
+6. Generate structured summary
 
 ---
 
 # Installation
 
-## 1. Clone Repository
+## Clone Repository
 
-```bash
-git clone YOUR_GITHUB_REPO_LINK
+```bash id="jlwmn3"
+git clone YOUR_REPOSITORY_LINK
 ```
 
 ---
 
-## 2. Open Project Folder
+## Open Project Folder
 
-```bash
+```bash id="1hyj5j"
 cd pdf_summarizer
 ```
 
 ---
 
-## 3. Create Virtual Environment
+## Create Virtual Environment
 
-### Windows
-
-```bash
+```bash id="r7o85m"
 python -m venv venv
 ```
 
 ---
 
-## 4. Activate Virtual Environment
+## Activate Virtual Environment
 
 ### Windows
 
-```bash
+```bash id="v4yxqs"
 venv\Scripts\activate
 ```
 
 ---
 
-## 5. Install Dependencies
+## Install Dependencies
 
-```bash
+```bash id="l2dx6f"
 pip install -r requirements.txt
 ```
 
@@ -220,7 +96,7 @@ pip install -r requirements.txt
 
 # Run Project
 
-```bash
+```bash id="9slxtt"
 python app.py
 ```
 
@@ -228,82 +104,86 @@ python app.py
 
 # Open In Browser
 
-```text
+```text id="t4b0ul"
 http://127.0.0.1:5000
 ```
 
 ---
 
-# Example Workflow
+# Recommended Python Version
 
-1. Upload PDF
-2. Extract text
-3. Semantic ranking
-4. MMR selection
-5. Topic clustering
-6. Structured summary generation
-7. Export summary
-
----
-
-# Algorithms Used
-
-## Semantic Similarity
-
-Measures sentence importance using embeddings.
-
----
-
-## MMR (Maximal Marginal Relevance)
-
-Balances:
-
-* relevance
-* diversity
-
-Prevents repetitive summaries.
-
----
-
-## KMeans Clustering
-
-Groups semantically related sentences into topics.
-
----
-
-# Future Improvements
-
-* Multi-language support
-* OCR for image PDFs
-* Better heading generation
-* KeyBERT keyword extraction
-* Advanced PDF export styling
-* Async processing
-* GPU optimization
-
----
-
-# Python Version
-
-Recommended:
-
-```text
+```text id="jlwmn4"
 Python 3.10
 ```
 
 ---
 
-# License
+# Project Structure
 
-MIT License
+```text id="jlwmn5"
+pdf_summarizer/
+│
+├── app.py
+├── summarizer.py
+├── requirements.txt
+├── README.md
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   ├── style.css
+│
+└── uploads/
+```
 
 ---
 
-# Author
+# Frontend Files
 
-Developed as an AI + NLP backend-heavy project using:
+## index.html
 
-* Semantic AI
-* Transformer Models
-* NLP Pipelines
-* Modern Web Technologies
+Located inside:
+
+```text id="7v8x7n"
+templates/index.html
+```
+
+Used for:
+
+* Main UI
+* PDF upload form
+* Summary display
+
+---
+
+## style.css
+
+Located inside:
+
+```text id="8r9w7n"
+static/style.css
+```
+
+Used for:
+
+* Dark modern UI
+* Layout styling
+* Responsive design
+* Animations
+
+---
+
+## script.js
+
+Located inside:
+
+```text id="v2c7nb"
+static/script.js
+```
+
+Used for:
+
+* Loading animation
+* Frontend interactions
+* UI enhancements
